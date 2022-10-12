@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Brandon Young</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+
+		:root{
+			--color-primary: #2a3a49;
+			--cover-color: white;
+			--cover-bg: #2a3a49;
+			--cover-font-size: min(16vmin, 72px);
+		}
+
+		:nth-child(1) { --nth-child: 1 }
+		:nth-child(2) { --nth-child: 2 }
+		:nth-child(3) { --nth-child: 3 }
+		:nth-child(4) { --nth-child: 4 }
+		:nth-child(5) { --nth-child: 5 }
+		:nth-child(6) { --nth-child: 6 }
+		:nth-child(7) { --nth-child: 7 }
+		:nth-child(8) { --nth-child: 8 }
+		:nth-child(9) { --nth-child: 9 }
+		:nth-child(10) { --nth-child: 10 }
+		:nth-child(11) { --nth-child: 11 }
+		:nth-child(12) { --nth-child: 12 }
+		:nth-child(13) { --nth-child: 13 }
+		:nth-child(14) { --nth-child: 14 }
+		:nth-child(15) { --nth-child: 15 }
+		:nth-child(16) { --nth-child: 16 }
+		:nth-child(17) { --nth-child: 17 }
+		:nth-child(18) { --nth-child: 18 }
+		:nth-child(19) { --nth-child: 19 }
+		:nth-child(n + 20) { --nth-child: 20 }
+
+		html {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body {
+			font-family: "Montserrat", Arial;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			left: 0px;
+			top: 0px;
+			margin: 0px;
+			padding: 0px;
+			color: var(--color-primary);
+		}
+
+		h1 {
+			font-size: 1.5em;
+			margin-top: 3em;
+			margin-bottom: 0.0em;
+		}
+
+		h2 {
+			font-size: 1.2em;
+			font-weight: normal;
+			margin-top: 2em;
+			margin-bottom: 0.3em;
+		}
+
+		h3 {
+			font-size: 0.7em;
+			font-weight: normal;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+		}
+
+		p {
+			font-size: 1em;
+			margin-top: 0.5em;
+			margin-bottom: 2em;
+		}
+
+		ul {
+			list-style-type: square;
+  			list-style-position: outside;
+		}
+
+		.main_container {
+			height: 100%;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+			overflow-y: auto;
+			overflow: overlay;
+		}
+
+		.content {
+			animation: content_grow 3s;
+			margin: 0px;
+			padding: 0px;
+			overflow: clip;
+		}
+
+		.cover {
+			color:  var(--cover-color);
+			background-color: var(--cover-bg); 
+			box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+			position: relative;
+			animation: cover_shrink 3s ease;
+			width: 100%;
+			left: 0px;
+			top: 0px;
+			margin: 0px;
+			padding: 0px;
+			height: calc(var(--cover-font-size) + 100px);
+			z-index: -2;
+		}
+
+		.cover_container {
+			max-width: 1000px;
+			height: 100%;
+			padding-left: 48px;
+			padding-right: 48px;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			align-content: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+
+		.cover_name {
+			font-size: min(16vmin, 72px);
+			font-family: 'Courier New', Courier, monospace;
+			position: relative;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.cover_type_container {
+			position: relative;
+			left: 0px;
+			height: 0px;
+			width: 100px;
+		}
+
+		.cover_type {
+			position: relative;
+			height: 0px;
+			width: 0px;
+			animation: typing 1.5s;
+			animation-timing-function: steps(15, jump-none);
+			background-color: var(--cover-bg);
+			z-index: 10;
+		}
+
+		.corner {
+			background-color: #00000000;
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			animation-name: corner_fade;
+			animation-duration: 3s;
+			opacity: 0;
+		}
+
+		.content_animation > *:nth-child(n)  {
+			position: relative;
+			animation: content_animation_wait calc(var(--nth-child) * 0.1s + 1.6s) linear, content_animation 1s ease-out calc(var(--nth-child) * 0.1s + 1.5s);
+		}
+		
+		@keyframes content_animation_wait {
+			0% {
+				top: 100px;
+				opacity: 0;
+			}
+
+			100% {
+				top: 100px;
+				opacity: 0;
+			}
+		}
+
+		@keyframes content_animation {
+			0% {
+				top: 100px;
+				opacity: 0;
+			}
+
+			100% {
+				top: 0px;
+			}
+		}
+
+
+		@keyframes cover_shrink {
+			0% {
+				height: 100%;
+			}
+
+			60% {
+				height: 100%;
+			}
+
+			100% {
+				height: calc(var(--cover-font-size) + 100px);
+			}
+		}
+
+		@keyframes content_grow {
+			0% {
+				height: 0%;
+			}
+
+			60% {
+				height: 0%;
+			}
+		}
+
+		@keyframes typing {
+			0% {
+				height: calc(var(--cover-font-size) + 10px);
+				width: calc(var(--cover-font-size) * 3 / 5 * 14);
+				left: 0px;
+				box-shadow: inset 8px 0px 0px -1px var(--cover-color);
+			}
+
+			100% {
+				height: calc(var(--cover-font-size) + 10px);
+				width: 0px;
+				left: calc(var(--cover-font-size) * 3 / 5* 14);
+				box-shadow: inset 8px 0px 0px -1px var(--cover-color);
+			}
+		}
+
+		@keyframes corner_fade {
+			0% {
+				opacity: 1;
+			}
+
+			60% {
+				opacity: 1;
+			}
+
+			80% {
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="main_container">
+		<div class="cover">
+			<div class="cover_container">
+				<div class="cover_type_container">
+					<div class="cover_type"></div>
+				</div>
+				<h1 class="cover_name">Brandon Young</h1>
+			</div>
+			<div class="corner" style="box-shadow: -10px -10px var(--cover-color); left: 20px; top: 20px;"></div>
+			<div class="corner" style="box-shadow: 10px -10px var(--cover-color); right: 20px; top: 20px;"></div>
+			<div class="corner" style="box-shadow: 10px 10px var(--cover-color); right: 20px; bottom: 20px;"></div>
+			<div class="corner" style="box-shadow: -10px 10px var(--cover-color); left: 20px; bottom: 20px;"></div>
+		</div>
+		<div class="content" style="width: 100%;">
+			<div class="content_animation" style="max-width: 1000px; margin-right: auto; margin-left: auto; padding: 32px;">
+				<h1>EXPIRENCE</h1>
+				<hr>
+				<h2><b>King's Island, Mason OH</b> - Ride operator</h2>
+				<h3>June 2021 - October 2022 (Seasonal)</h3>
+				<p>Safely Operate 10 different rides and interact with guests as a part of teams from 5 to 15 people.</p>
+				
+				<h2><b>Walmart, Mason OH</b> - Cart Associate</h2>
+				<h3>June 2020 - Sept 2020</h3>
+				<p>Return carts to bay and perform COVID-19 related procedures.</p>
+
+				<h1>EDUCATION</h1>
+				<hr>
+				<h2><b>The Ohio State University</b></h2>
+				<ul>
+					<li>4.0 GPA — Sophomore</li>
+					<li>Aug 2021 to Present</li>
+					<li>Electrical and Computer Eng.</li>
+				</ul>
+				<h2><b>William Mason High School</b></h2>
+				<ul>
+					<li>3.97 GPA</li>
+					<li>Aug 2016 to May 2021</li>
+				</ul>
+				
+				<h1>Heading</h1>
+				<p>Test</p>
+				<h1>Heading</h1>
+				<p>Test</p>
+				<h1>Heading</h1>
+				<p>Test</p>
+				<h1>Heading</h1>
+				<p>Test</p>
+				<h1>Heading</h1>
+				<p>Test</p>
+				<h1>Heading</h1>
+				<p>Test</p>
+				<h1>Heading</h1>
+				<p>Test</p>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
